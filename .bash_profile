@@ -1,4 +1,14 @@
-### Aliases
+# Add `~/bin` to the `$PATH`
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:$PATH";
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # Open specified files in Sublime Text
 # "s ." will open the current directory in Sublime
@@ -92,6 +102,3 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
-
-# init z! (https://github.com/rupa/z)
-. ~/z.sh

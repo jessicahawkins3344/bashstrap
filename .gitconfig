@@ -21,3 +21,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[user]
+	name = Jessica Hawkins
+	email = jessicarhawkins08@outlook.com
