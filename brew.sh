@@ -32,7 +32,6 @@ brew install bash
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
-brew install bash-completion2
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -49,7 +48,28 @@ brew install homebrew/dupes/grep
 #brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 brew install -v --with-fpm --with-mysql --disable-opcache php56
+ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+
+# Install PHP extensions
+brew install php56-http
+brew install php56-memcache
+brew install php56-memcached
+brew install php56-mongo
+brew install php56-opcache
+brew install php56-tidy
+brew install php56-xdebug
+
+# Add launch agent for memcached
+ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
+
 brew install node
+
+# Installing updated Git
+brew install git
+brew unlink git && brew link git
+brew info git
+brew install git-extra
+brew install git bash-completion2
 
 # Install font tools.
 #brew tap bramstein/webfonttools
@@ -84,6 +104,7 @@ brew install node
 #brew install xz
 
 # Install other useful binaries.
+brew install rename
 #brew install ack
 #brew install dark-mode
 #brew install exiv2

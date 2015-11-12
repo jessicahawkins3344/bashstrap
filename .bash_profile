@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH";
 
 # Load the shell dotfiles, and then some:
@@ -103,5 +103,6 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="/usr/local/Cellar/coreutils/8.21/libexec/gnubin:$PATH"
 eval "$(jenv init -)"
 source /Users/jhawk/bashstrap/lib/composure.sh
