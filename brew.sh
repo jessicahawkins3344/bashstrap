@@ -105,6 +105,7 @@ brew install git bash-completion2
 
 # Install other useful binaries.
 brew install rename
+brew install tree
 #brew install ack
 #brew install dark-mode
 #brew install exiv2
