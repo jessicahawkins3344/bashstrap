@@ -124,5 +124,11 @@ brew install tree
 #brew install webkit2png
 #brew install zopfli
 
+# DNSmasq
+brew install dnsmasq
+mkdir -p /usr/local/etc
+cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
+subl /usr/local/etc/dnsmasq.conf
+
 # Remove outdated versions from the cellar.
 brew cleanup
