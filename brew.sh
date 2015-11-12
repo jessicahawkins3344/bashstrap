@@ -130,5 +130,7 @@ mkdir -p /usr/local/etc
 cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
 subl /usr/local/etc/dnsmasq.conf
 
+sudo networksetup -setdnsservers "Wi-Fi" 127.0.0.1
+
 # Remove outdated versions from the cellar.
 brew cleanup
