@@ -132,5 +132,9 @@ subl /usr/local/etc/dnsmasq.conf
 
 sudo networksetup -setdnsservers "Wi-Fi" 127.0.0.1
 
+#Open SSL
+brew install openssl
+brew link openssl
+
 # Remove outdated versions from the cellar.
 brew cleanup
