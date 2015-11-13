@@ -104,4 +104,3 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-source /Users/jhawk/bashstrap/lib/composure.sh
