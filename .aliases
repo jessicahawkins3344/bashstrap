@@ -2,8 +2,10 @@
 #		Standard helpers - nav, shortcuts, ls flavors
 # *********************************************************************
 
+# Python3 Alias
 alias python='python3'
 
+# Open bashstrap directory in Sublime Text
 alias bashstrap='subl ~/bashstrap'
 
 # Updates host file
@@ -12,8 +14,10 @@ alias updatehosts='cd && cd ~/hosts && python updateHostsFile.py'
 # Disable AWDL
 alias downl0='sudo ifconfig awdl0 down'
 
+# Personal specific folder to open in shell, change to your favorite.
 alias Squarely='cd /Users/jhawk/vagrant-local/www/bedrock/htdocs/web/app/themes/Squarely'
 
+# Reset Launchpad
 alias launchpad='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -38,6 +42,7 @@ alias onyx="open -a Onyx"
 alias ccleaner="open -a CCleaner"
 alias postbox="open -a Postbox"
 alias chrome="open -a Google\ Chrome"
+alias atom="open -a Atom"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -76,7 +81,7 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
 # Change SSH Port - valid on Yosemite & El Capitan
-alias sshport="cd && ~/bashstrap/sshport.sh"
+alias sshport='cd && ~/bashstrap/sshport.sh && cd'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -92,7 +97,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 # *********************************************************************
 dscacheutil -flushcache
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -198,7 +203,7 @@ alias bed='brew edit'
 # *********************************************************************
 
 # Used by Disk Utility to verify or repair permissions on installed packages - helpful!
-alias packrepair="repair_packages --standard-pkgs"
+alias repairpkgs="sudo /usr/libexec/repair_packages --repair --standard-pkgs"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
