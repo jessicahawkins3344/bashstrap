@@ -105,3 +105,11 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="/usr/local/Cellar/coreutils/8.21/libexec/gnubin:$PATH"
 eval "$(jenv init -)"
+
+# Cleanup ssh-agent
+eval $(ssh-agent)
+function cleanssh {
+		echo \"Killing SSH-Agent\"
+		kill -9 $SSH_AGENT_PID
+}
+trap cleanssh EXIT
