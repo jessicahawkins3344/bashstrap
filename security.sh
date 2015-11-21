@@ -23,6 +23,9 @@ sudo defaults write /Library/Preferences/com.apple.alf allowsignedenabled -bool 
 # Network & DNS                                                            
 ###############################################################################
 
+# Disable IPv6 for wireless
+networksetup -setv6off Wi-Fi
+
 brew install dnsmasq
 
 mkdir -p /usr/local/etc

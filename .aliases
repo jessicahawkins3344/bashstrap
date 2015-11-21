@@ -4,7 +4,13 @@
 
 alias python='python3'
 
+alias bashstrap='subl ~/bashstrap'
+
+# Updates host file
 alias updatehosts='cd && cd ~/hosts && python updateHostsFile.py'
+
+# Disable AWDL
+alias downl0='sudo ifconfig awdl0 down'
 
 alias Squarely='cd /Users/jhawk/vagrant-local/www/bedrock/htdocs/web/app/themes/Squarely'
 
@@ -26,6 +32,12 @@ alias p="cd ~/projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
+
+# Application Shortcuts
+alias onyx="open -a Onyx"
+alias ccleaner="open -a CCleaner"
+alias postbox="open -a Postbox"
+alias chrome="open -a Google\ Chrome"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
