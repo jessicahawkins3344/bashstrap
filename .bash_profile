@@ -105,4 +105,3 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="/usr/local/Cellar/coreutils/8.21/libexec/gnubin:$PATH"
 eval "$(jenv init -)"
-source /Users/jhawk/bashstrap/lib/composure.sh
