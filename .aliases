@@ -14,6 +14,9 @@ alias updatehosts='cd && cd ~/hosts && python updateHostsFile.py'
 # Disable AWDL
 alias downl0='sudo ifconfig awdl0 down'
 
+# Set DNS servers to 127.0.0.1 if for some reason not set
+alias setdns='sudo networksetup -setdnsservers "Wi-Fi" 127.0.0.1'
+
 # Personal specific folder to open in shell, change to your favorite.
 alias Squarely='cd /Users/jhawk/vagrant-local/www/bedrock/htdocs/web/app/themes/Squarely'
 

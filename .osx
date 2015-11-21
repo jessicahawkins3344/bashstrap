@@ -13,10 +13,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "jhawks-MacBook-Air"
-sudo scutil --set HostName "jhawks-MacBook-Air"
-sudo scutil --set LocalHostName "jhawks-MacBook-Air"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "jhawks-MacBook-Air"
+sudo scutil --set ComputerName "jhawks-MB-Air"
+sudo scutil --set HostName "jhawks-MB-Air"
+sudo scutil --set LocalHostName "jhawks-MB-Air"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "jhawks-MB-Air"
 
 # Turn on firewall, enable logging, stealth mode, disable allow signed
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -bool true
