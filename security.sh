@@ -25,36 +25,29 @@ sudo defaults write /Library/Preferences/com.apple.alf allowsignedenabled -bool 
 
 # Disable IPv6 for wireless
 networksetup -setv6off Wi-Fi
+echo "ipV6 off"
 
-brew install dnsmasq
-
-mkdir -p /usr/local/etc
-cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
-vim /usr/local/etc/dnsmasq.conf
-
-#Install and start program
-sudo cp -fv /usr/local/opt/dnsmasq/*.plist /Library/LaunchDaemons
-sudo chown root /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
-sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
-
-#Set DNS Server
-sudo networksetup -setdnsservers "Wi-Fi" 127.0.0.1
+networksetup -setnetworkserviceenabled "Thunderbolt Bridge" off
+networksetup -setnetworkserviceenabled "Bluetooth PAN" off
+networksetup -setnetworkserviceenabled "Bluetooth DUN" off
 
 #Disable Captive Portal
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+echo "captive portal off"
 
 #Spoof Mac Address
 sudo ifconfig en0 ether $(openssl rand -hex 6 | sed 's%\(..\)%\1:%g; s%.$%%')
+echo "mac address spoofed"
 
-
-###############################################################################
-# OpenSSL & Curl                                                           
-###############################################################################
-
-brew install openssl
-brew install curl --with-openssl
-brew link --force curl
-brew link --force openssl
-
-
+# YOSEMITE / EL CAPITAN SPECIFIC SETTINGS
+if [[  $(sw_vers -productVersion | grep '10.[10-11]') ]]
+then
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState '0' > /dev/null 2>&1
+sudo defaults write /Library/Preferences/com.apple.Bluetooth BluetoothAutoSeekKeyboard '0' > /dev/null 2>&1
+sudo defaults write /Library/Preferences/com.apple.Bluetooth BluetoothAutoSeekPointingDevice '0' > /dev/null 2>&1
+echo "BLUETOOTH IS DISABLED"
+# DISABLE IDIOTIC SETTING 'DISPLAYS HAVE SEPERATE SPACES'
+defaults write com.apple.spaces spans-displays -bool TRUE
+fi
+exit
 

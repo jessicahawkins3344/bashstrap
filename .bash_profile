@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 #!/usr/bin/env bash
 
-BASH_IT="$(cd "$(dirname "$0")" && pwd)"
-
-# Path to the bash it configuration
-export BASHSTRAP={{BASHTRAP}};
-
 # Add `~/bin` to the `$PATH`
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH";
 export PATH="$HOME/bin:$PATH";
@@ -122,6 +117,3 @@ function cleanssh {
 		kill -9 $SSH_AGENT_PID
 }
 trap cleanssh EXIT
-
-# Load Bash It
-source "$BASHSTRAP"

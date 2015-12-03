@@ -13,3 +13,8 @@ brew cask install google-chrome
 brew cask install appcleaner
 brew cask install atom
 brew cask install java
+brew cask install ccleaner
+brew cask install onyx
+brew cask install postbox
+brew cask install vagrant
+brew cask install virtualbox

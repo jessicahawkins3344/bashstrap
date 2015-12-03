@@ -67,6 +67,7 @@ brew install php56-xdebug
 brew install jenv
 brew install ruby
 brew install node
+brew install python3
 
 npm install -g bower
 npm install -g phantomjs

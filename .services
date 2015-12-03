@@ -30,6 +30,7 @@ disable_agent com.apple.IMLoggingAgent
 disable_agent com.apple.locationmenu
 disable_agent com.apple.notificationcenterui
 disable_agent com.apple.pbs
+disable_agent com.apple.soagent
 disable_agent com.apple.rtcreportingd
 disable_agent com.apple.SafariCloudHistoryPushAgent
 disable_agent com.apple.safaridavclient
